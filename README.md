@@ -5,9 +5,26 @@
 - hash trick one-hot编码
 - CV+hyperopt+bagging超参数选择
 
+
+
 # Usage
 
 - 基础特征抽取
+
+  ```C++
+  #抽取特征-onehot
+  ./svm_feature_extract -in ./ -suffix txt -feid 1000 -clus conf/cluster.conf -out out/svm_features.txt -debug 1
+  #userid与target替换
+  ./target_replace -base data/ffm_features.txt -in data/flag_car_sample.txt -out out/ffm_features.txt 
+  ```
+
+  - 参数说明：
+    - -in：待抽取的数据集
+    - -suffix：输入数据集的扩展名
+    - -Field：编码开始编号
+    - -clus：特征组合配置文件
+    - -out：抽取后特征文件
+
 - GBDT特征生成
 
 ```python
